@@ -11,11 +11,11 @@ object ex01 {
     sc.setLogLevel("ERROR")
     
     //Task 1
-    val rdd = sc.textFile("hdfs://localhost:54310/user/hduser/Sparkexercise/Inceptez1.txt")
+    val rdd = sc.textFile("hdfs://localhost:54310/user/hduser/Sparkexercise/file1.txt")
     println("Row count ",rdd.count)
     
     //Task 2
-    val rdd1 = sc.textFile("hdfs://localhost:54310/user/hduser/Sparkexercise/Inceptez2.txt")
+    val rdd1 = sc.textFile("hdfs://localhost:54310/user/hduser/Sparkexercise/file2.txt")
     val idd = rdd1.filter( x => x.contains("Inceptez"))
     println("Rows that contains Inceptez ",idd.count)
     
@@ -31,9 +31,9 @@ object ex01 {
     println("Words that doesn't contain Hadoop ",hdd.count)
     
     //Task 4
-    val jdd1 = sc.textFile("file:/home/hduser/hdpcd/Inceptez4A.txt")
-    val jdd2 = sc.textFile("file:/home/hduser/hdpcd/Inceptez4B.txt")
-    val jdd3 = sc.textFile("file:/home/hduser/hdpcd/Inceptez4C.txt")
+    val jdd1 = sc.textFile("file:/home/hduser/hdpcd/file4A.txt")
+    val jdd2 = sc.textFile("file:/home/hduser/hdpcd/file4B.txt")
+    val jdd3 = sc.textFile("file:/home/hduser/hdpcd/file4C.txt")
 
     val join = jdd1.union(jdd2).union(jdd3)
     val result = join.flatMap(x => x.split(" ").toList)
