@@ -1,2 +1,2 @@
-### Scala-Spark
-# This project includes usecases done in Spark using scala
+# Scala-Spark
+### This project includes Spark usecases done in scala
